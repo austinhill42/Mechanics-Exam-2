@@ -2,7 +2,7 @@ __author__ = 'austin'
 
 import math
 import matplotlib.pyplot as plt
-
+ 
 dt = 0.01
 k = 0.1
 b_min = 95
