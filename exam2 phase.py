@@ -17,26 +17,16 @@ for b in [i * 0.1 for i in range(b_min, b_max)]:
     y = 0.0
     x_lst = []
     y_lst = []
-    t_lst = []
-    poin_x_lst = []
-    poin_y_lst = []
-    count = 0.1
+
 
     for t in [j * 0.01 for j in range(0, 10000)]:
 
         x_lst.append(x)
         y_lst.append(y)
-        t_lst.append(t)
-
-        if count > 3.14:
-            poin_x_lst.append(x)
-            poin_y_lst.append(y)
-            count = 0.0
 
         x += (y * dt)
         y += ((- (k * y) - math.sin(x) + (b * math.cos(t))) * dt)
         t += dt
-        count += 0.01
 
         # print "B: %f\n\tt: %f\n\tx: %f\n\ty: %f\n\tcount: %f" % (b, t, x, y, count)
 
@@ -48,7 +38,5 @@ for b in [i * 0.1 for i in range(b_min, b_max)]:
     plt.xlabel("x")
     plt.ylabel("y")
     plt.plot(x_lst, y_lst)
-    mgr = plt.get_current_fig_manager()
-    # mgr.resize(200, 175)
 
 plt.show()

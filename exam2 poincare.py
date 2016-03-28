@@ -17,7 +17,6 @@ for b in [i * 0.1 for i in range(b_min, b_max)]:
     y = 0.0
     x_lst = []
     y_lst = []
-    t_lst = []
     poin_x_lst = []
     poin_y_lst = []
     count = 0.1
@@ -26,7 +25,6 @@ for b in [i * 0.1 for i in range(b_min, b_max)]:
 
         x_lst.append(x)
         y_lst.append(y)
-        t_lst.append(t)
 
         if count > 3.14:
             poin_x_lst.append(x)
@@ -45,10 +43,6 @@ for b in [i * 0.1 for i in range(b_min, b_max)]:
     plt.xlim(-xlim, xlim)
     plt.gca().set_autoscale_on(False)
     plt.title("b = " + str(b))
-    plt.xlabel("x")
-    plt.ylabel("y")
-    plt.plot(x_lst, y_lst)
-    mgr = plt.get_current_fig_manager()
-    # mgr.resize(200, 175)
+    plt.plot(poin_x_lst, poin_y_lst, marker='.', linestyle='')
 
 plt.show()
