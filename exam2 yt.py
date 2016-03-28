@@ -4,11 +4,10 @@ import math
 import matplotlib.pyplot as plt
 
 dt = 0.01
-k = 1
+k = 0.1
 b_min = 95
 b_max = 136
-b = 0.7
-ylim = 10
+ylim = 20
 xlim = 200
 
 for b in [i * 0.1 for i in range(b_min, b_max)]:
@@ -18,7 +17,7 @@ for b in [i * 0.1 for i in range(b_min, b_max)]:
     y_lst = []
     t_lst = []
 
-    for t in [j * 0.01 for j in range(0, 10000)]:
+    for t in [j * 0.01 for j in range(0, 100000)]:
 
         y_lst.append(y)
         t_lst.append(t)
@@ -31,7 +30,7 @@ for b in [i * 0.1 for i in range(b_min, b_max)]:
 
     plt.figure()
     plt.ylim(-ylim, ylim)
-    plt.xlim(-xlim, xlim)
+    plt.xlim(-5, xlim)
     plt.gca().set_autoscale_on(False)
     plt.title("b = " + str(b))
     plt.xlabel("t")
